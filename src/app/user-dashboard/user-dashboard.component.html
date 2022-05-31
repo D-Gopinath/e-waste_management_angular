@@ -1,0 +1,17 @@
+
+<h2>Available Recycling Centres</h2>
+<div class="row">
+    <ng-container  *ngFor="let data of facility">
+        <div class="column">
+            <div class="card w-75">
+                <div class="card-body">
+                  <h5 class="card-title">Name:{{data.name}}</h5>
+                  <p class="card-text">Address:{{data.address}}</p>
+                  <p class="card-text">Contact No:{{data.contactNo}}</p>
+                  <p class="card-text">Email:{{data.email}}</p>
+                  <a routerLink="/user/proposal/{{uid}}/{{data.id}}" class="btn btn-primary">Send</a>
+                </div>
+              </div>
+        </div>
+    </ng-container>   
+</div>

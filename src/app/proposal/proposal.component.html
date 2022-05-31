@@ -1,0 +1,26 @@
+
+<form ngNativeValidate (submit)="request()">
+    <div class="form-group">
+      <label for="wastetype">Select Type</label>
+      <select class="form-control" id="wastetype" name="type" [(ngModel)]="type">
+        <option value="communication device">Computers or Mobiles</option>
+        <option value="electronics">Electronic devices or solar panels</option>
+        <option value="screens">TV's or monitor screens</option>
+        <option value="coolers">freezers or other cooling equipments</option>
+        <option value="bulbs">LED bulbs</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label for="weight">Approximate Weight</label>
+        <input type="text" class="form-control" id="weight" name="weight" [(ngModel)]="weight" placeholder="ex:12kg">
+      </div>
+    <div class="form-group">
+        <label for="proof">proof</label>
+        <input type="file" class="form-control-file" id="proof" name="proof" [(ngModel)]="proof">
+    </div>
+    <div class="form-group">
+      <label for="upi">UPI</label>
+      <input class="form-control" id="upi" name="upi" [(ngModel)]="upi" [(ngModel)]="upi">
+    </div>
+    <button type="submit" class="btn btn-primary">Send Request</button>
+  </form>
