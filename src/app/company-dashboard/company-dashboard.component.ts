@@ -11,18 +11,21 @@ export class CompanyDashboardComponent implements OnInit {
   constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
-    this.listrequests();
+    this.listuserRequests();
   }
-  getUser(){
+  getFacility(){
     let facility = localStorage.getItem("companyData");
     return facility != null ? JSON.parse(facility): null;
   }
-  fid = this.getUser().id;
+  fid = this.getFacility().id;
   ewastedata!:any;
-  listrequests(){
+  listuserRequests(){
+
+    console.log(this.fid);
 
     const url = "http://localhost:9000/ewaste/viewbyfacility/"+this.fid;
     this.http.get(url).subscribe(res=>{
+      console.log(res);
       this.ewastedata=res;
     },err=>{
       console.log(err.error.message);

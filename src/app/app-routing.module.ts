@@ -7,6 +7,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { ProposalComponent } from './proposal/proposal.component';
 import { RegisterComponent } from './register/register.component';
+import { TransactionsComponent } from './transactions/transactions.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserRequestsComponent } from './user-requests/user-requests.component';
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:'facility/dashboard',component:CompanyDashboardComponent},
   {path:'user/proposal/:uid/:fid',component:ProposalComponent},
   {path:'user/requests',component:UserRequestsComponent},
+  {path:'user/transactions',component:TransactionsComponent},
   {path:'',redirectTo:'homepage',pathMatch:'full'}
 ];
 

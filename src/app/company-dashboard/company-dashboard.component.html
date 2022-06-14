@@ -1,17 +1,17 @@
 <div class="row">
     <ng-container  *ngFor="let data of ewastedata">
         <div class="column">
-            <div class="card w-75">
+            <div class="card w-100">
                 <div class="card-body">
                   <h5 class="card-title">Name:{{data.username}}</h5>
                   <p class="card-text">Address:{{data.fromAddress}}</p>
                   <p class="card-text">wasteType:{{data.wasteType}}</p>
                   <p class="card-text">weight:{{data.weight}}</p>
-                  <p><img src="{{data.proof}}" alt="proof"></p>
+                  <p><img [src]='data.proof | safe' alt="proof"></p>
                   <p class="card-text">Requested On:{{data.date}}</p>
-                  <button (click)="accept(data)">Accept</button>
-                  <br>
-                  <button (click)="reject(data)">Reject</button>
+                  <button class="btn-primary" (click)="accept(data)">Accept</button>
+                  <p>  </p>
+                  <button class="btn-danger" (click)="reject(data)">Reject</button>
                 </div>
               </div>
         </div>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,7 +12,7 @@ export class ProposalComponent implements OnInit {
   uid: any;
   fid: any;
 
-  constructor(private http:HttpClient,private route: ActivatedRoute) {}
+  constructor(private http:HttpClient,private route: ActivatedRoute,private sanitizer:DomSanitizer) {}
 
   ngOnInit(): void {
     this.uid = this.route.snapshot.params['uid'];
