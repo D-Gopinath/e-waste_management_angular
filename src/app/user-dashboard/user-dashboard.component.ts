@@ -22,7 +22,7 @@ export class UserDashboardComponent implements OnInit {
   facility!:any;
   listfacilities(){
 
-    const url = "http://localhost:9000/facility/showAll";
+    const url = "https://e-waste-management-api.herokuapp.com/facility/showAll";
     this.http.get(url).subscribe(res=>{
       this.facility=res;
     },err=>{

@@ -22,7 +22,7 @@ export class UserRequestsComponent implements OnInit {
   ewastedata!:any;
   listrequests(){
 
-    const url = "http://localhost:9000/ewaste/viewbyuser/"+this.uid;
+    const url = "https://e-waste-management-api.herokuapp.com/ewaste/viewbyuser/"+this.uid;
     this.http.get(url).subscribe(res=>{
       this.ewastedata=res;
     },err=>{

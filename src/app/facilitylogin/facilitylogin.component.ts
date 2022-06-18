@@ -33,7 +33,7 @@ export class FacilityloginComponent implements OnInit {
         email:email,
         password:password
       }
-      const url="http://localhost:9000/facility/login";
+      const url="https://e-waste-management-api.herokuapp.com/facility/login";
       this.http.post(url,user).subscribe(res=>{
         let user=res;
         this.toastr.success("Successfully LogedIn");

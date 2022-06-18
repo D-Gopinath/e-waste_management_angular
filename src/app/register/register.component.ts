@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit {
         email:email,
         password:password
       }
-      const url="http://localhost:9000/users/register";
+      const url="https://e-waste-management-api.herokuapp.com/users/register";
       this.http.post(url,user).subscribe(res=>{
           alert("Successfully Registered")
           this.toastr.success("successfully registered");

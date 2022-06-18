@@ -62,7 +62,7 @@ export class ProposalComponent implements OnInit {
         fromAddress:fromaddress,
         upi:upi
       }
-      const url="http://localhost:9000/ewaste/details";
+      const url="https://e-waste-management-api.herokuapp.com/ewaste/details";
       this.http.post(url,EwasteData).subscribe(res=>{
           alert("Request Sent ...After Acccepttance you can send your e-wastes");
           window.location.href="user/dashboard";

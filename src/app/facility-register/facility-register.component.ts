@@ -55,7 +55,7 @@ export class FacilityRegisterComponent implements OnInit {
         email:email,
         password:password
       }
-      const url="http://localhost:9000/facility/register";
+      const url="https://e-waste-management-api.herokuapp.com/facility/register";
       this.http.post(url,user).subscribe(res=>{
           alert("Successfully Registered")
           this.toastr.success("successfully registered");

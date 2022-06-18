@@ -23,7 +23,7 @@ export class CompanyDashboardComponent implements OnInit {
 
     console.log(this.fid);
 
-    const url = "http://localhost:9000/ewaste/viewbyfacility/"+this.fid;
+    const url = "https://e-waste-management-api.herokuapp.com/ewaste/viewbyfacility/"+this.fid;
     this.http.get(url).subscribe(res=>{
       console.log(res);
       this.ewastedata=res;
@@ -59,7 +59,7 @@ export class CompanyDashboardComponent implements OnInit {
 
   response(EwasteData:any){
 
-    const url="http://localhost:9000/facility/response";
+    const url="https://e-waste-management-api.herokuapp.com/facility/response";
       this.http.post(url,EwasteData).subscribe(res=>{
           alert("Responded")  
       },err=>{

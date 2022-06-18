@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         email:email,
         password:password
       }
-      const url="http://localhost:9000/users/login";
+      const url="https://e-waste-management-api.herokuapp.com/users/login";
       this.http.post(url,user).subscribe(res=>{
         let user=res;
         this.toastr.success("Successfully LogedIn");
