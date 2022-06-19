@@ -1,1 +1,21 @@
-<p>admin-listfacility works!</p>
+<h1>RECYCLING CENTERS LIST</h1>
+<br>
+<table datatable class="table table-bordered">
+    <thead>
+        <tr>
+            <th>FACILITY NAME</th>
+            <th>ADDRESS</th>
+            <th>PHONE</th>
+            <th>EMAIL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let facility of facilityList">
+            <td>{{facility.name}}</td>
+            <td>{{facility.address}}</td>
+            <td>{{facility.contactNo}}</td>
+            <td>{{facility.email}}</td>
+            <td><button type="button" class="btn-danger" (click)="deleteFacility(facility)">Remove</button> &nbsp;
+            </tr>
+    </tbody>
+</table>

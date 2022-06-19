@@ -1,1 +1,25 @@
-<p>admin-listusers works!</p>
+<h1>USERS LIST </h1>
+<br>
+<table datatable class="table table-bordered">
+    <thead>
+        <tr>
+            <th>NAME</th>
+            <th>GENDER</th>
+            <th>ADDRESS</th>
+            <th>PHONE</th>
+            <th>EMAIL</th>
+            <th>ROLE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of usersList">
+            <td>{{user.name}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.address}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.role}}</td>
+            <td><button type="button" class="btn-danger" (click)="deleteUser(user)">Remove</button> &nbsp;
+            </tr>
+    </tbody>
+</table>
