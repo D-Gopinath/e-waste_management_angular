@@ -1,5 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -9,7 +10,7 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private http:HttpClient,private toastr:ToastrService) { }
+  constructor(private http:HttpClient,private toastr:ToastrService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -28,7 +29,7 @@ export class RegisterComponent implements OnInit {
 
   register(){
 
-    const name = this.firstname+' '+this.lastname;
+    const name = this.firstname+''+this.lastname;
     const gender = this.gender;
     const address = this.address1+','+this.address2 +','+ this.city+','+ this.state +','+ this.zip;
     const phone = this.phone;
@@ -64,12 +65,12 @@ export class RegisterComponent implements OnInit {
       this.http.post(url,user).subscribe(res=>{
           alert("Successfully Registered")
           this.toastr.success("successfully registered");
-          window.location.href="/login";  
+          this.router.navigate(["login"]);  
       },err=>{
         console.log(err.error.message);
         alert(err.error.message);
         this.toastr.error(err.error.message);
-        window.location.href="/login";
+        this.router.navigate(["login"]); 
       })      
   }
   catch(err:any)

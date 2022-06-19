@@ -19,6 +19,10 @@ import { UserRequestsComponent } from './user-requests/user-requests.component';
 import { FooterComponent } from './footer/footer.component';
 import { SafePipe } from './safe.pipe';
 import { TransactionsComponent } from './transactions/transactions.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminListusersComponent } from './admin-listusers/admin-listusers.component';
+import { AdminTransactionsComponent } from './admin-transactions/admin-transactions.component';
+import { AdminListfacilityComponent } from './admin-listfacility/admin-listfacility.component';
 
 
 
@@ -37,7 +41,11 @@ import { TransactionsComponent } from './transactions/transactions.component';
     UserRequestsComponent,
     FooterComponent,
     SafePipe,
-    TransactionsComponent
+    TransactionsComponent,
+    AdminLoginComponent,
+    AdminListusersComponent,
+    AdminTransactionsComponent,
+    AdminListfacilityComponent
   ],
   imports: [
     BrowserModule,

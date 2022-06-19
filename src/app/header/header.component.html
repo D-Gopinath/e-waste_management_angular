@@ -14,20 +14,31 @@
                         aria-current="page" routerLink="/homepage">Home</a></li>
                     <li class="nav-item" *ngIf="!isLoggedIn() && !isFacilityLoggedIn()"><a class="nav-link active"
                             aria-current="page" routerLink="/register">Register</a></li>
+
                     <li class="nav-item" *ngIf="!isLoggedIn() && !isFacilityLoggedIn()"><a class="nav-link active"
                                 aria-current="page" routerLink="/login">Login</a></li>
+
                     <li class="nav-item" *ngIf="isLoggedIn()"><a class="nav-link active"
                                 aria-current="page" routerLink="/user/dashboard">Dashboard</a></li>
+
                     <li class="nav-item" *ngIf="isLoggedIn()"><a class="nav-link active"
                                 aria-current="page" routerLink="/user/requests">Requests Sent</a></li>
+
                     <li class="nav-item" *ngIf="isLoggedIn()"><a class="nav-link active"
                                 aria-current="page" routerLink="/user/transactions">Transactions</a></li>
+
                     <li class="nav-item" *ngIf="!isFacilityLoggedIn() && !isLoggedIn()"><a class="nav-link active"
                                  aria-current="page" routerLink="/facility/register">Facility Register</a></li>
+
                     <li class="nav-item" *ngIf="!isFacilityLoggedIn() && !isLoggedIn()"><a class="nav-link active"
                                   aria-current="page" routerLink="facility/login">Facility Login</a></li>
+
+                    <li class="nav-item" *ngIf="!isLoggedIn() && !isFacilityLoggedIn()"><a class="nav-link active"
+                                    aria-current="page" routerLink="/admin/login">Admin</a></li>
+
                     <li class="nav-item" *ngIf="isFacilityLoggedIn()"><a class="nav-link active"
                                   aria-current="page" routerLink="/facility/dashboard">Dashboard</a></li>
+
                     <li class="nav-item" *ngIf="isLoggedIn() || isFacilityLoggedIn()">
                                 <a class="nav-link" (click)="logout()">Logout</a></li>
                 </ul>

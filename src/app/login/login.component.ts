@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -9,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http:HttpClient,private toastr:ToastrService) { }
+  constructor(private http:HttpClient,private toastr:ToastrService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -39,12 +40,12 @@ export class LoginComponent implements OnInit {
         this.toastr.success("Successfully LogedIn");
         alert("Successfully Logedin")
         localStorage.setItem('userData',JSON.stringify(user));
-        window.location.href='/user/dashboard';
+        this.router.navigate(["user/dashboard"]); 
       },err=>{
           alert(err.error.message);
           console.log(err.error.message);
           this.toastr.error(err.error.message);
-          window.location.href="/homepage";
+          this.router.navigate(["homepage"]); 
       })
     }
     catch(err){

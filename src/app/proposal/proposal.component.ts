@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-proposal',
@@ -12,7 +12,7 @@ export class ProposalComponent implements OnInit {
   uid: any;
   fid: any;
 
-  constructor(private http:HttpClient,private route: ActivatedRoute,private sanitizer:DomSanitizer) {}
+  constructor(private http:HttpClient,private route: ActivatedRoute,private sanitizer:DomSanitizer,private router:Router) {}
 
   ngOnInit(): void {
     this.uid = this.route.snapshot.params['uid'];
@@ -65,12 +65,12 @@ export class ProposalComponent implements OnInit {
       const url="https://e-waste-management-api.herokuapp.com/ewaste/details";
       this.http.post(url,EwasteData).subscribe(res=>{
           alert("Request Sent ...After Acccepttance you can send your e-wastes");
-          window.location.href="user/dashboard";
+          this.router.navigate(["user/dashboard"]); 
         
       },err=>{
         console.log(err.error.message);
         alert(err.error.message);
-        window.location.href="user/dashboard";
+        this.router.navigate(["user/dashboard"]); 
       })
     }
     catch(err:any)

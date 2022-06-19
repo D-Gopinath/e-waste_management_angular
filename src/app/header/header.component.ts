@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -25,7 +26,7 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem("userData");
     localStorage.removeItem("companyData");
     alert("Logout Successful");
-    window.location.href="/homepage";
+    this.router.navigate(["homepage"]);
   }
 
   isFacilityLoggedIn(){

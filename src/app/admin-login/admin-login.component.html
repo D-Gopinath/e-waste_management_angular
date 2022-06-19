@@ -1,0 +1,19 @@
+
+<div>
+    <div class="login">
+    <form style="text-align: center;" ngNativeValidate (submit)="adminLogin()" autocomplete="off">
+        <h1>Login In</h1>
+        <br>
+        <br>
+        <label>Email</label> <input type="email" name="email" [(ngModel)]="email" id="email" placeholder="Enter your E-mail">
+        <br>
+        <br>
+        <label>Password</label><input type="password" name="password" [(ngModel)]="password" id="password" placeholder="Enter your password">
+        <br>
+        <br>
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+</div>
