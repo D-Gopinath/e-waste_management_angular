@@ -58,6 +58,7 @@ export class RegisterComponent implements OnInit {
         gender:gender,
         address:address,
         phone:phone,
+        role:"User",
         email:email,
         password:password
       }
