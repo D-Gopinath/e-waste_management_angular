@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-listusers',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminListusersComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
     this.listUsers();
@@ -31,7 +32,7 @@ export class AdminListusersComponent implements OnInit {
     const url="https://e-waste-management-api.herokuapp.com/admin/deleteuser/"+id;
     this.http.delete(url).subscribe(res=>{
       alert("Successfully deleted");
-      window.location.reload();
+      this.router.navigate(["admin/userslist"]);
     },err=>{
       console.log(err.error.message);
       alert(err.error.message);
